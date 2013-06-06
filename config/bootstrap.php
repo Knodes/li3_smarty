@@ -16,45 +16,45 @@ Libraries::add('Smarty', array(
     "bootstrap" => "Smarty.class.php",
 ));
 
-$defaults = array(
-    'view' => '\lithium\template\View',
-    'renderer' => '\li3_smarty\template\view\adapter\Smarty',
-    'paths' => array(
-        'template' => array(
-            LITHIUM_APP_PATH . '/views/{:controller}/{:template}.{:type}.tpl',
-            '{:library}/views/{:controller}/{:template}.{:type}.tpl',
-        ),
-        'element' => array(
-            LITHIUM_APP_PATH . '/views/elements/{:template}.html.tpl',
-            '{:library}/views/elements/{:template}.html.tpl'
-        ),
-        'layout' => false
-    ),
-    'compile_dir' => LITHIUM_APP_PATH . '/resources/templates_c',
-    'cache_dir' => LITHIUM_APP_PATH . '/resources/cache',
-    'template_dir' => array(
-        LITHIUM_APP_PATH . "/views",
-        LITHIUM_APP_PATH . "/views/pages"
-    ),
-    'plugin_dir' => array(
-        LI3_SMARTY_PATH . "/plugins",
-        LITHIUM_APP_PATH . "/extensions/plugins"
-    )
-);
+// $defaults = array(
+//     'view' => '\lithium\template\View',
+//     'renderer' => '\li3_smarty\template\view\adapter\Smarty',
+//     'paths' => array(
+//         'template' => array(
+//             LITHIUM_APP_PATH . '/views/{:controller}/{:template}.{:type}.tpl',
+//             '{:library}/views/{:controller}/{:template}.{:type}.tpl',
+//         ),
+//         'element' => array(
+//             LITHIUM_APP_PATH . '/views/elements/{:template}.html.tpl',
+//             '{:library}/views/elements/{:template}.html.tpl'
+//         ),
+//         'layout' => false
+//     ),
+//     'compile_dir' => LITHIUM_APP_PATH . '/resources/templates_c',
+//     'cache_dir' => LITHIUM_APP_PATH . '/resources/cache',
+//     'template_dir' => array(
+//         LITHIUM_APP_PATH . "/views",
+//         LITHIUM_APP_PATH . "/views/pages"
+//     ),
+//     'plugin_dir' => array(
+//         LI3_SMARTY_PATH . "/plugins",
+//         LITHIUM_APP_PATH . "/extensions/plugins"
+//     )
+// );
 
-$keys = array_intersect_key($config, $defaults);
-foreach ($keys as $key => $val) {
-    if (is_array($defaults[$key])) {
-        $defaults[$key] = Set::merge($defaults[$key], $config[$key]);
-    }
-    else {
-        $defaults[$key] = $val;
-    }
-}
+// $keys = array_intersect_key($config, $defaults);
+// foreach ($keys as $key => $val) {
+//     if (is_array($defaults[$key])) {
+//         $defaults[$key] = Set::merge($defaults[$key], $config[$key]);
+//     }
+//     else {
+//         $defaults[$key] = $val;
+//     }
+// }
 
 /**
  * Map to the new renderer
  */
-Media::type('default', null, $defaults);
+// Media::type('default', null, $defaults);
 
 ?>
